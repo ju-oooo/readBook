@@ -1,0 +1,128 @@
+/* section start */
+section {
+    width: 75rem;
+    margin: auto;
+}
+
+/* section end */
+/* book-detail start */
+.book-detail {
+    width: 100%;
+    background-color: #fff;
+}
+
+.book-detail::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.detail-left,
+.detail-right {
+    box-sizing: border-box;
+    float: left;
+}
+
+.detail-left {
+    width: 15rem;
+    padding: 2rem;
+}
+
+
+.detail-img {
+}
+
+.detail-img img {
+    width: 100%;
+}
+
+.detail-right {
+    width: 60rem;
+    border-left: 0.1rem solid #f0f0f0;
+    padding-right: 2rem;
+}
+
+.detail-right li {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+
+.detail-right li:last-child {
+    border-bottom: none;
+}
+
+.detail-right li p {
+    padding-bottom: 1rem;
+}
+
+.detail-name a {
+    font-size: 1.5rem;
+}
+
+.detail-name a:hover {
+    color: #f26552;
+}
+
+.detail-name + p span {
+    font-size: 0.8rem;
+    margin-right: 1rem;
+    color: #9e9e9e;
+}
+
+.detail-price {
+    font-size: 0.8rem;
+}
+
+.detail-try,
+.detail-buy {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border-radius: 8%;
+    color: #fff;
+}
+
+.detail-try {
+    background-color: #8bc34a;
+    font-size: 0.8rem;
+}
+
+.detail-buy {
+    background-color: #F26552;
+    font-size: 0.8rem;
+}
+
+.detail-brief {
+    font-size: 0.8rem;
+    color: #9e9e9e;
+    padding: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 3rem;
+
+}
+
+.detail-show {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #9e9e9e;
+    display: block;
+    float: right;
+}
+
+.detail-show:hover {
+    color: #F26552;
+    cursor: pointer;
+}
+
+.detail-right li:last-child::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* book-detail end */

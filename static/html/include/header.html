@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+    <link rel="stylesheet" href="../../css/book/book-public.css">
+    <style>
+        header {
+            min-width: 75rem;
+            background-color: #fff;
+        }
+
+        .header {
+            width: 75rem;
+            margin: auto;
+            padding: 1rem 0;
+        }
+
+        .header::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .header li {
+            float: left;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+        }
+
+        .header li:first-child {
+            width: 30rem;
+            padding: 0 2rem;
+        }
+
+        .header li:not(:first-child) a {
+            display: block;
+            padding: 0.25rem 0.75rem;
+            border-bottom: 0.25rem solid transparent;
+        }
+
+        .header li.active a {
+            color: #f26552;
+            border-color: #f26552;
+        }
+
+        .header li:not(:first-child) a:hover {
+            color: #f26552;
+        }
+
+        /*.header li.login a, .header li.register a {*/
+        /*    color: #9e9e9e;*/
+        /*    border: 0.1rem solid #9e9e9e;*/
+        /*    border-radius: 3rem;*/
+        /*}*/
+        .header li:last-child {
+            float: right;
+            margin-right: 5rem;
+        }
+
+        .header li:last-child a {
+            float: left;
+            display: block;
+            border: 0.1rem solid #9e9e9e;
+            margin: 0 0.5rem;
+        }
+        .header li:last-child a:hover{
+            border-color: #f26552;
+        }
+        /*.header li.login, .header li.register {*/
+        /*    margin-right: 1rem;*/
+        /*}*/
+
+        /*.header li.login a:hover, .header li.register a:hover {*/
+        /*    border-color: #f26552;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<header>
+    <ul class="header">
+        <li><a href="#"><img src="#" alt="阅读"></a></li>
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">分类</a></li>
+        <li><a href="#">排行</a></li>
+        <li>
+            <a class="login" href="#">登录</a>
+            <a class="register" href="#">注册</a>
+        </li>
+    </ul>
+</header>
+</body>
+</html>

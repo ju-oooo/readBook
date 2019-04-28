@@ -1,0 +1,357 @@
+/* 轮播图 start*/
+.nav {
+    height: 20rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav_slide {
+    position: absolute;
+    display: flex;
+}
+
+.nav_slide li {
+    flex-shrink: 0;
+}
+
+/* 轮播图 end*/
+/* title start*/
+.tag_title {
+    height: 10rem;
+    text-align: center;
+}
+
+.tag_title > p {
+    font-size: 1.5rem;
+    padding: 3rem 0 1.25rem 0;
+}
+
+.tag_title .catalog {
+
+}
+
+.tag_title .catalog > li {
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    border-right: 0.1rem solid #9e9e9e;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+}
+
+.tag_title .catalog > li:last-child {
+    border-right: 0;
+}
+
+.tag_title .catalog a {
+    color: #9e9e9e;
+}
+
+.tag_title .catalog a:hover {
+    color: #f26552;
+}
+
+/* title end*/
+/* 1F start*/
+.tag_content {
+    height: 31rem;
+}
+
+.content_left, .content_center, .content_right {
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* content_left start */
+.content_left {
+    width: 33%;
+    padding: 2rem 3rem;
+    border-top: 0.05rem solid #f0f0f0;
+}
+
+.content_left > p {
+    margin-bottom: 1rem;
+}
+
+.content_left .book_name {
+    font-size: 1.5rem;
+    padding-top: 0.25rem;
+}
+
+.content_left .book_author,
+.content_left .detail {
+    font-size: 1rem;
+}
+
+.content_left > img {
+    width: 9rem;
+    float: right;
+    margin-top: 3rem;
+    box-shadow: 10px 15px 22px #ccc;
+}
+
+.content_left > img:hover {
+    /*box-shadow: 10px 15px 22px #ccc;*/
+}
+
+/* content_left end */
+/* content_center start */
+.content_center {
+    width: 34%;
+    border-left: 0.1rem solid #f0f0f0;
+    border-right: 0.05rem solid #f0f0f0;
+}
+.content_center ul::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.content_center li {
+    box-sizing: border-box;
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 0.05rem solid #f0f0f0;
+    padding: 1.85rem 3rem;
+}
+
+.content_center li a {
+    display: block;
+}
+
+.content_center img {
+    width: 6rem;
+    box-shadow: 10px 15px 22px #ccc;
+}
+
+.content_center .book_name, .content_center .book_author {
+    text-align: left;
+    padding-top: 0.5rem;
+}
+
+.content_center .book_name {
+    display: block;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content_center .book_author {
+    color: #9e9e9e;
+}
+
+/* content_center end */
+/* content_right start */
+.content_right {
+    width: 33%;
+    border-top: 0.05rem solid #f0f0f0;
+    background-color: #fff;
+    padding: 1rem 1rem;
+}
+
+.content_right .book_popular {
+    height: 10%;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+.content_right ul {
+    height: 90%;
+    width: 100%;
+}
+
+.content_right li {
+    width: 100%;
+}
+
+.content_right li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.content_right li > span {
+    float: left;
+    width: 10%;
+    text-align: left;
+    color: #9e9e9e;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0.4rem 0;
+}
+
+.content_right dl {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.content_right .close {
+    width: 90%;
+    float: right;
+}
+
+.content_right .close .book_name {
+    color: #9e9e9e;
+    display: block;
+    width: 70%;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.content_right .close .book_view_count {
+    float: right;
+}
+
+.content_right .show {
+    display: none;
+    width: 90%;
+    float: right;
+    padding: 0.25rem 0;
+}
+
+.content_right .active .show {
+    display: block !important;
+}
+
+.content_right .active .close {
+    display: none !important;
+}
+
+.content_right .show .book-img {
+    float: left;
+    width: 4rem;
+    padding-right: 1rem;
+}
+
+.content_right .show .book-img img {
+    width: 100%;
+}
+
+.content_right .book_name:hover {
+    color: #f26552;
+}
+
+.content_right .book_view_count {
+    color: #9e9e9e;
+}
+
+/* content_right end */
+/* 1F end*/
+
+/* 热门类型 start*/
+.pop_content {
+    height: 30rem;
+}
+
+.pop-top > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop-top > ul > li {
+    width: 33.2%;
+    height: 20rem;
+    background-color: #fff;
+}
+.pop-top > ul > li +li{
+    border-left: 0.1rem solid #f0f0f0;
+}
+
+.pop-top .pop-image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 3rem auto 2rem;
+}
+
+.pop-top .pop-image img {
+    width: 100%;
+}
+
+.pop-top .pop-image ~ p, .pop_content span {
+    text-align: center;
+    color: #9e9e9e;
+    font-size: 0.6rem;
+}
+
+.pop-top .pop-image ~ p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 50%;
+    display: block;
+    margin: 1rem auto;
+}
+
+.pop-top .pop-bookName {
+    color: #212121 !important;
+    font-size: 1rem !important;
+}
+
+.pop-top .pop-like {
+    margin-top: 1rem;
+}
+
+.pop_content .pop-bottom {
+    border-top: 0.1rem solid #f0f0f0;
+}
+
+.pop-bottom ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop-bottom ul > li {
+    width: 20%;
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem 2rem;
+}
+
+.pop-bottom li + li{
+    border-left: 0.1rem solid #f0f0f0;
+}
+
+.pop-bottom .pop-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 1rem;
+    box-sizing: border-box;
+}
+
+.pop-bottom .pop-image img {
+    width: 100%;
+}
+
+.pop-bottom p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pop-bottom .pop-bookName {
+    display: block;
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pop-bottom .pop-like {
+    font-size: 0.8rem;
+    color: #9e9e9e;
+}
+
+/* 热门类型 end*/
+
+

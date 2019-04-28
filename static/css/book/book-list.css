@@ -1,0 +1,208 @@
+
+
+
+/* section start */
+section {
+	width: 75rem;
+	margin: auto;
+}
+
+/* section end */
+/* option-menu start */
+.option-menu {
+	background-color: #fff;
+	padding: 1.5rem 2rem;
+	font-size: 0.8rem;
+}
+
+.option-menu::after,
+.option-menu ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.option-row {
+	width: 100%;
+}
+
+.option-row,
+.option-row .option {
+	float: left;
+}
+
+
+.option-type {
+	float: left;
+	color: #ccc;
+	padding-top: 1.1rem;
+}
+
+.option-row ul {
+	border-bottom: 0.01rem solid #f0f0f0;
+	margin-left: 3rem;
+	padding: 0.5rem 0;
+}
+
+.option-row ul li {
+	padding: 0.25rem 0;
+	margin: 0.25rem 0.25rem;
+}
+
+.option-row .option a {
+	padding: 0 1rem;
+	cursor: pointer;
+}
+
+.option-row .option {
+	border: 0.05rem solid #fff;
+	border-radius: 2rem;
+}
+
+.option-row .option:hover {
+	border: 0.05rem solid #bebebe;
+}
+
+.option-row .option.active {
+	background-color: #bebebe;
+}
+
+.option-row .option.active a {
+	color: #fff;
+}
+
+
+
+/* option-menu end */
+
+/* 列表 book-list start */
+.book-sort {
+	width: 100%;
+}
+
+.book-sort::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.book-sort li {
+	float: left;
+	margin-top: 2rem;
+	border: 0.05rem solid transparent;
+	border-bottom: none;
+}
+
+.book-sort li a {
+	display: block;
+	background-color: #f7f7f7;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 3rem;
+	color: #9e9e9e;
+	font-size: 0.9rem;
+}
+
+.book-sort li.active a {
+	background-color: #fff;
+}
+
+.book-list {
+	width: 100%;
+	background-color: #fff;
+	padding: 1rem;
+
+}
+
+.book-list,
+.book,
+.book-left,
+.book-right {
+	box-sizing: border-box;
+}
+
+.book-list::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.book {
+	padding: 1rem;
+	width: 25%;
+	margin-bottom: 1rem;
+}
+.book ,
+.book-left,
+.book-right {
+	float: left;
+}
+
+.book-left {
+	width: 7rem;
+	padding-right: 0.7rem;
+	overflow: hidden;
+}
+
+.book-left img {
+	width: 100%;
+	transition: transform 2s;
+}
+
+.book-left img:hover {
+	transform: scale(1.1, 1.1);
+}
+
+.book-right {
+	width: 8rem;
+}
+
+.book-name {
+	font-size: 1.1rem;
+	display: block;
+	padding-bottom: 0.3rem;
+	border-bottom: 0.05rem solid #f0f0f0;
+	margin-bottom: 0.25rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.book-name a:hover {
+	color: #f26552;
+}
+
+.book-author,
+.book-numberWord,
+.book-brief {
+	font-size: 0.8rem;
+	display: block;
+	color: #9e9e9e;
+	margin-bottom: 0.5rem;
+
+}
+
+.book-author {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.book-numberWord {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.book-brief {
+	margin-bottom: 0;
+	line-height: 1.1rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* 列表 book-list end */
+
