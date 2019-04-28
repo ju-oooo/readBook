@@ -8,5 +8,4 @@ let pool = mysql.createPool({
     connectionLimit: 15,
     // debug:true
 })
-
 module.exports = pool;
