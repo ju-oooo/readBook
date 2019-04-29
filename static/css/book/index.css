@@ -27,7 +27,7 @@
 }
 
 .tag_title .catalog {
-
+    font-size:0;
 }
 
 .tag_title .catalog > li {
@@ -35,7 +35,7 @@
     height: 1rem;
     line-height: 1rem;
     border-right: 0.1rem solid #9e9e9e;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding: 0 0.5rem;
 }
 

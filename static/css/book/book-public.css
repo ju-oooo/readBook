@@ -26,6 +26,8 @@ section {
 /* 开始 start */
 /* header start */
 header {
+    min-width: 75rem;
+    background-color: #fff;
     /*height: 5rem;*/
 }
 

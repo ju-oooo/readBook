@@ -1,7 +1,7 @@
 /* section start */
 section {
     width: 75rem;
-    margin: auto;
+    margin: 3rem auto 0;
 }
 
 /* section end */
@@ -94,15 +94,16 @@ section {
 }
 
 .detail-brief {
+    height: 4rem;
+    line-height: 1.5rem;
     font-size: 0.8rem;
     color: #9e9e9e;
     padding: 0 !important;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    height: 3rem;
+
 
 }
 
