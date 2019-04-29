@@ -95,7 +95,7 @@ section {
 
 .detail-brief {
     height: 4rem;
-    line-height: 1.5rem;
+    line-height: 1.4rem;
     font-size: 0.8rem;
     color: #9e9e9e;
     padding: 0 !important;
@@ -103,8 +103,6 @@ section {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-
-
 }
 
 .detail-show {
@@ -127,3 +125,124 @@ section {
 }
 
 /* book-detail end */
+
+/* book-community start */
+.book-community {
+    background-color: #fff;
+    display: flex;
+}
+
+.community-left {
+    min-width: 55rem;
+    background-color: #fff;
+}
+
+.comment-header {
+    padding: 2rem;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+
+.comment-header .comment-title {
+    font-size: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 1rem;
+    margin-left: 2rem;
+    border-right: 0.2rem solid #f0f0f0;
+}
+
+.comment-header .comment-count {
+    color: #9e9e9e;
+    padding-left: 1rem;
+}
+
+.comment-header .comment-write {
+    float: right;
+    color: #fff;
+    background-color: #8bc34a;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.comment-list .comment-detail {
+    display: flex;
+}
+
+.comment-other .comment-detail {
+    width: 55rem;
+}
+
+.comment-detail .user-img {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comment-detail .user-img img {
+    width: 100%;
+}
+
+.comment-detail .comment-other {
+    width: 50rem;
+    padding-top: 1rem;
+    margin-left: 2rem;
+}
+
+.comment-other p:first-child {
+    margin-bottom: 1rem;
+}
+
+.comment-other .user-name {
+    font-size: 1.2rem;
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.comment-other .user-vip {
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+    display: inline-block;
+    background-color: #d2d2d2;
+    color: #fff;
+}
+
+.comment-other .comment-time {
+    float: right;
+    color: #9e9e9e;
+}
+
+.comment-other .comment-content {
+    color: #9e9e9e;
+    font-size: 1.2rem;
+}
+
+.comment-other p:last-child {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.comment-other .community-like {
+    padding-right: 1rem;
+    color: #9e9e9e;
+}
+
+.comment-other .community-comment {
+    padding-left: 1rem;
+    color: #9e9e9e;
+}
+
+.comment-other .community-reply {
+    float: right;
+    color: #9e9e9e;
+}
+
+.community-right {
+    border-left: 0.5rem solid #f0f0f0;
+    background-color: #fafafa;
+    min-width: 20rem;
+}
+
+/* book-community end */
+
