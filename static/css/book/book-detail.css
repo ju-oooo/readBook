@@ -146,8 +146,7 @@ section {
     font-size: 1.5rem;
     display: inline-block;
     vertical-align: middle;
-    padding-right: 1rem;
-    margin-left: 2rem;
+    padding: 0 1rem;
     border-right: 0.2rem solid #f0f0f0;
 }
 
@@ -166,18 +165,19 @@ section {
 
 .comment-list .comment-detail {
     display: flex;
-}
-
-.comment-other .comment-detail {
     width: 55rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-bottom: 0.1rem solid #f0f0f0;
 }
 
 .comment-detail .user-img {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
     display: block;
     border-radius: 50%;
     overflow: hidden;
+    float: right;
 }
 
 .comment-detail .user-img img {
@@ -185,9 +185,8 @@ section {
 }
 
 .comment-detail .comment-other {
-    width: 50rem;
-    padding-top: 1rem;
-    margin-left: 2rem;
+    width: 45rem;
+    padding-left: 1rem;
 }
 
 .comment-other p:first-child {
@@ -195,7 +194,7 @@ section {
 }
 
 .comment-other .user-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: inline-block;
     padding-right: 1rem;
 }
@@ -215,7 +214,7 @@ section {
 
 .comment-other .comment-content {
     color: #9e9e9e;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .comment-other p:last-child {
@@ -242,6 +241,47 @@ section {
     border-left: 0.5rem solid #f0f0f0;
     background-color: #fafafa;
     min-width: 20rem;
+}
+
+.book-recommend > p {
+    font-size: 1.5rem;
+    padding: 2rem;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+
+.book-recommend .recommend-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.recommend-list .recommend-detail {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 1rem;
+}
+
+.recommend-detail .detail-img {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.detail-img img {
+    width: 100%;
+}
+
+.recommend-detail .detail-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.recommend-detail .detail-author {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #9e9e9e;
 }
 
 /* book-community end */
