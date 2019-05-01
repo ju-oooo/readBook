@@ -1,3 +1,4 @@
+
 /* section start */
 section {
     width: 75rem;
@@ -57,6 +58,7 @@ section {
 }
 
 .detail-name a {
+    color: #212121;
     font-size: 1.5rem;
 }
 
@@ -385,6 +387,10 @@ section {
     width: 90%;
     float: right;
     padding: 0.25rem 0;
+}
+
+.popular-list .show .book-name {
+    color: #212121;
 }
 
 .popular-list .active .show {

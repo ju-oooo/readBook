@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: #212121;
 }
 
 ul,
@@ -19,7 +18,7 @@ body {
 }
 
 section {
-    width: 1200px;
+    width: 75rem;
     margin: auto;
 }
 
@@ -28,13 +27,12 @@ section {
 header {
     min-width: 75rem;
     background-color: #fff;
-    /*height: 5rem;*/
 }
 
 /* header end */
 /* footer start */
 footer {
-    /*height: 5rem;*/
+    min-width: 75rem;
 }
 
 /* footer end */
