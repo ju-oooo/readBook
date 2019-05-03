@@ -1,0 +1,72 @@
+section .rank-title {
+  background-color: #f0f0f0;
+  text-align: center; }
+  section .rank-title p {
+    padding: 1.5rem 0;
+    font-size: 1.5rem; }
+    section .rank-title p span {
+      color: #e43a2e;
+      font-size: 1.5rem;
+      padding-right: 0.5rem; }
+section .rank-type ul {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 0.01rem solid #f0f0f0;
+  padding: 1rem; }
+  section .rank-type ul li {
+    width: 100%;
+    text-align: center; }
+    section .rank-type ul li p {
+      color: #9e9e9e;
+      font-size: 1rem;
+      padding: 0.25rem 0; }
+      section .rank-type ul li p + p {
+        font-size: 0; }
+    section .rank-type ul li a {
+      font-size: 0.8rem;
+      color: #212121;
+      padding: 0 0.5rem;
+      text-align: center; }
+      section .rank-type ul li a:not(:last-child) {
+        border: 0.01rem solid transparent;
+        border-right-color: #9e9e9e; }
+      section .rank-type ul li a:hover {
+        color: #e43a2e; }
+section .rank-content {
+  background-color: #fff; }
+  section .rank-content ul {
+    padding: 1rem 2rem; }
+    section .rank-content ul li:first-child {
+      background-color: #f0f0f0; }
+      section .rank-content ul li:first-child span {
+        font-size: 0.8rem;
+        color: #9e9e9e; }
+    section .rank-content ul li {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 0.1rem dotted #f0f0f0; }
+      section .rank-content ul li:hover {
+        background-color: #f0f0f0; }
+      section .rank-content ul li span {
+        padding: 1rem;
+        color: #9e9e9e;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      section .rank-content ul li .rank {
+        width: 8rem; }
+      section .rank-content ul li .book-name {
+        width: 35rem;
+        color: #212121; }
+        section .rank-content ul li .book-name:hover {
+          color: #e43a2e;
+          cursor: pointer; }
+      section .rank-content ul li .book-author {
+        width: 10rem; }
+      section .rank-content ul li .book-type {
+        width: 10rem; }
+      section .rank-content ul li .book-read {
+        width: 8rem; }
+
+/*# sourceMappingURL=book-rank.css.map */
