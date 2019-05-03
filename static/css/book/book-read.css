@@ -1,131 +1,180 @@
 @charset "UTF-8";
 body {
-  background-color: #e3d1bd;
-  width: 45rem;
-  margin: 4rem auto 0;
-  display: flex;
-  justify-content: center; }
-  body .content {
+    background-color: #e3d1bd;
+    width: 45rem;
+    margin: 4rem auto 0;
+    display: flex;
+    justify-content: center;
+}
+
+body .content {
     width: 45rem;
     background-color: #f8f0e7;
-    position: relative; }
-    body .content .left {
-      width: 15rem;
-      padding-right: 0.25rem;
-      box-sizing: border-box;
-      position: absolute;
-      left: -15rem; }
-      body .content .left .catalogue {
-        position: fixed;
-        color: #212121;
-        padding: 0.5rem 0.75rem; }
-        body .content .left .catalogue .title {
-          padding: 0.5rem;
-          background-color: #f8f0e7;
-          text-align: right; }
-          body .content .left .catalogue .title::before {
-            float: left;
-            content: "目录";
-            color: #9e9e9e; }
-          body .content .left .catalogue .title span {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e43a2e;
-            vertical-align: middle; }
-        body .content .left .catalogue .catalogue-content {
-          background-color: #fff;
-          height: 14.5rem;
-          overflow-y: auto;
-          transition: height 2s;
-          scrollbar-base-color: #e43a2e;
-          scrollbar-arrow-color: #e43a2e;
-          scrollbar-darkshadow-color: #e43a2e; }
-          body .content .left .catalogue .catalogue-content li {
-            padding: 0.5rem 1rem;
-            border-bottom: 0.1rem dotted #f0f0f0;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap; }
-            body .content .left .catalogue .catalogue-content li:hover {
-              cursor: pointer;
-              color: #e43a2e;
-              background-color: #f8f0e7; }
-          body .content .left .catalogue .catalogue-content .load-more {
-            text-align: center;
-            padding: 0.5rem 0;
-            display: block;
-            width: 100%;
-            height: 100%;
-            color: #9e9e9e;
-            background-color: #f0f0f0; }
-            body .content .left .catalogue .catalogue-content .load-more:hover {
-              color: #e43a2e;
-              cursor: pointer; }
-    body .content .header {
-      position: fixed;
-      top: 0;
-      width: 45rem;
-      background-color: #e3d1bd; }
-      body .content .header p {
-        box-sizing: border-box;
-        margin: auto;
-        background-color: #f8f0e7;
-        width: 45rem;
-        border-bottom: 0.05rem solid #9e9e9e;
-        padding: 2rem 3rem 0.25rem; }
-        body .content .header p span {
-          display: inline-block;
-          color: #9e9e9e;
-          padding: 0.5rem 0; }
-          body .content .header p span .book-name {
-            color: #f26552; }
-        body .content .header p .buy {
-          vertical-align: middle;
-          padding: 0.5rem;
-          border-radius: 0.25rem;
-          color: #fff;
-          float: right;
-          background-color: #f26552;
-          font-size: 0.8rem; }
-          body .content .header p .buy:hover {
-            background-color: #e43a2e; }
-    body .content .article {
-      padding: 3rem; }
-      body .content .article .book-title {
-        display: block;
-        padding: 2rem 0;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold; }
-      body .content .article p {
-        padding-bottom: 1rem;
-        text-indent: 2rem;
-        line-height: 2rem;
-        letter-spacing: 0.2rem; }
-    body .content .right {
-      width: 15rem;
-      box-sizing: border-box;
-      position: absolute;
-      right: -15rem;
-      padding-left: 0.25rem; }
-      body .content .right .nav-btn {
-        position: fixed;
-        color: #212121;
-        bottom: 2.5rem; }
-        body .content .right .nav-btn a {
-          text-align: center;
-          color: #e3d1bd;
-          width: 2.5rem;
-          height: 2.5rem;
-          line-height: 2.5rem;
-          border-radius: 50%;
-          font-size: 2rem;
-          background-color: #f8f0e7;
-          display: block;
-          margin: 1rem 0.25rem;
-          opacity: 0.8; }
-          body .content .right .nav-btn a:hover {
-            box-shadow: #9e9e9e 0 0 20px 0;
-            opacity: 1; }
+    position: relative;
+}
+
+body .content .left {
+    width: 15rem;
+    padding-right: 0.25rem;
+    box-sizing: border-box;
+    position: absolute;
+    left: -15rem;
+}
+
+body .content .left .catalogue {
+    position: fixed;
+    color: #212121;
+    padding: 0.5rem 0.75rem;
+}
+
+body .content .left .catalogue .title {
+    padding: 0.5rem;
+    background-color: #f8f0e7;
+    text-align: right;
+}
+
+body .content .left .catalogue .title::before {
+    float: left;
+    content: "目录";
+    color: #9e9e9e;
+}
+
+body .content .left .catalogue .title span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e43a2e;
+    vertical-align: middle;
+}
+
+body .content .left .catalogue .catalogue-content {
+    background-color: #fff;
+    height: 14.5rem;
+    overflow-y: auto;
+    transition: height 2s;
+    scrollbar-base-color: #e43a2e;
+    scrollbar-arrow-color: #e43a2e;
+    scrollbar-darkshadow-color: #e43a2e;
+}
+
+body .content .left .catalogue .catalogue-content li {
+    padding: 0.5rem 1rem;
+    border-bottom: 0.1rem dotted #f0f0f0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+body .content .left .catalogue .catalogue-content li:hover {
+    cursor: pointer;
+    color: #e43a2e;
+    background-color: #f8f0e7;
+}
+
+body .content .left .catalogue .catalogue-content .load-more {
+    text-align: center;
+    padding: 0.5rem 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #9e9e9e;
+    background-color: #f0f0f0;
+}
+
+body .content .left .catalogue .catalogue-content .load-more:hover {
+    color: #e43a2e;
+    cursor: pointer;
+}
+
+body .content .header {
+    position: fixed;
+    top: 0;
+    width: 45rem;
+    background-color: #e3d1bd;
+}
+
+body .content .header p {
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #f8f0e7;
+    width: 45rem;
+    border-bottom: 0.05rem solid #9e9e9e;
+    padding: 2rem 3rem 0.25rem;
+}
+
+body .content .header p span {
+    display: inline-block;
+    color: #9e9e9e;
+    padding: 0.5rem 0;
+}
+
+body .content .header p span .book-name {
+    color: #f26552;
+}
+
+body .content .header p .buy {
+    vertical-align: middle;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #fff;
+    float: right;
+    background-color: #f26552;
+    font-size: 0.8rem;
+}
+
+body .content .header p .buy:hover {
+    background-color: #e43a2e;
+}
+
+body .content .article {
+    padding: 3rem;
+}
+
+body .content .article .book-title {
+    display: block;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+body .content .article p {
+    padding-bottom: 1rem;
+    text-indent: 2rem;
+    line-height: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+body .content .right {
+    width: 15rem;
+    box-sizing: border-box;
+    position: absolute;
+    right: -15rem;
+    padding-left: 0.25rem;
+}
+
+body .content .right .nav-btn {
+    position: fixed;
+    color: #212121;
+    bottom: 2.5rem;
+}
+
+body .content .right .nav-btn a {
+    text-align: center;
+    color: #e3d1bd;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    background-color: #f8f0e7;
+    display: block;
+    margin: 1rem 0.25rem;
+    opacity: 0.8;
+}
+
+body .content .right .nav-btn a:hover {
+    box-shadow: #9e9e9e 0 0 20px 0;
+    opacity: 1;
+}
 
 /*# sourceMappingURL=book-read.css.map */
