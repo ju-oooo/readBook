@@ -19,6 +19,75 @@ body {
     width: 45rem;
     background-color: $light-brown;
     position: relative;
+
+    //头部
+    .header {
+      position: fixed;
+      top: 0;
+      width: 45rem;
+      background-color: $brown;
+
+      p {
+        box-sizing: border-box;
+        margin: auto;
+        background-color: $light-brown;
+        width: 45rem;
+        border-bottom: 0.05rem solid $gray;
+        padding: 2rem 1rem 0.25rem;
+
+        span {
+          display: inline-block;
+          color: $gray;
+          padding: 0.5rem 0;
+
+          .book-name {
+            color: $light-jacinth;
+          }
+        }
+
+        .play {
+          font-size: 1.5rem;
+          &:hover {
+            color: $jacinth;
+            cursor: pointer;
+          }
+        }
+
+        .buy {
+          vertical-align: middle;
+          padding: 0.5rem;
+          border-radius: 0.25rem;
+          color: $white;
+          float: right;
+          background-color: $light-jacinth;
+          font-size: 0.8rem;
+
+          &:hover {
+            background-color: $jacinth;
+          }
+        }
+      }
+    }
+
+    .article {
+      padding: 3rem;
+
+      .book-title {
+        display: block;
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        padding-bottom: 1rem;
+        text-indent: 2rem;
+        line-height: 2rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+
     //侧边栏
     .left {
       width: 15rem;
@@ -92,69 +161,6 @@ body {
         }
       }
     }
-
-    //头部
-    .header {
-      position: fixed;
-      top: 0;
-      width: 45rem;
-      background-color: $brown;
-
-
-      p {
-        box-sizing: border-box;
-        margin: auto;
-        background-color: $light-brown;
-        width: 45rem;
-        border-bottom: 0.05rem solid $gray;
-        padding: 2rem 3rem 0.25rem;
-
-        span {
-          display: inline-block;
-          color: $gray;
-          padding: 0.5rem 0;
-
-          .book-name {
-            color: $light-jacinth;
-
-          }
-        }
-
-        .buy {
-          vertical-align: middle;
-          padding: 0.5rem;
-          border-radius: 0.25rem;
-          color: $white;
-          float: right;
-          background-color: $light-jacinth;
-          font-size: 0.8rem;
-
-          &:hover {
-            background-color: $jacinth;
-          }
-        }
-      }
-    }
-
-    .article {
-      padding: 3rem;
-
-      .book-title {
-        display: block;
-        padding: 2rem 0;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      p {
-        padding-bottom: 1rem;
-        text-indent: 2rem;
-        line-height: 2rem;
-        letter-spacing: 0.2rem;
-      }
-    }
-
 
     .right {
       width: 15rem;
