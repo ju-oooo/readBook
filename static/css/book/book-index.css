@@ -1,4 +1,3 @@
-
 /* 轮播图 start*/
 .nav {
     height: 20rem;
@@ -137,7 +136,7 @@
 
 .content-center .book-name {
     display: block;
-    color:#212121;
+    color: #212121;
     font-size: 1.2rem;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -219,6 +218,7 @@
     width: 90%;
     float: right;
     padding: 0.25rem 0;
+
 }
 
 .content-right .active .show {
@@ -237,6 +237,10 @@
 
 .content-right .show .book-img img {
     width: 100%;
+}
+
+.content-right .book-name {
+    color: #212121;
 }
 
 .content-right .book-name:hover {
