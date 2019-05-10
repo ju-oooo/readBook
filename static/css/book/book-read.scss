@@ -13,8 +13,6 @@ body {
   margin: 4rem auto 0;
   display: flex;
   justify-content: center;
-
-
   //内容
   .content {
     width: 45rem;
@@ -40,7 +38,6 @@ body {
           display: inline-block;
           color: $gray;
           padding: 0.5rem 0;
-
           .book-name {
             color: $light-jacinth;
           }
