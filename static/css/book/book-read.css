@@ -28,7 +28,8 @@ body {
           body .content .header p span .book-name {
             color: #f26552; }
         body .content .header p .play {
-          font-size: 1.5rem; }
+          font-size: 1.5rem;
+          color: #212121; }
           body .content .header p .play:hover {
             color: #e43a2e;
             cursor: pointer; }

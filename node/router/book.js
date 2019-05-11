@@ -2,19 +2,26 @@ const express = require('express');
 const pool = require('../pool');
 const router = express.Router();
 
-//获取书籍列表
+/**
+ * 获取书籍列表
+ * pageNum 页数
+ * count 一页显示总数
+ * 测试url http://localhost:3333/book/list
+ */
 router.post('/list', (req, res) => {
-    let data = req.body;
+    let data = req.body
     let pageNum = parseInt(data.pageNum);
     let count = parseInt(data.count);
-    if (!isNaN(count) && count < 5 && !isNaN(pageNum) && pageNum < 0) {
+    if (isNaN(count) || count < 5 && !isNaN(pageNum) && pageNum < 0) {
         count = 5;
         pageNum = 0;
     }
+
     let sql = 'select * from book order by id limit ?,?';
     pool.query(sql, [pageNum, count], (err, result) => {
         if (err) throw  err;
         if (result.length > 0) {
+            console.log(result)
             res.send({code: 200, bookList: result})
         } else {
             // res.redirect()//进行重定向
@@ -22,12 +29,17 @@ router.post('/list', (req, res) => {
         }
     });
 });
-//获取书籍详细信息
+
+/**
+ * 获取书籍详细信息
+ * bookId 书籍编号
+ * 测试url http://localhost:3333/book/detail
+ */
 router.post('/detail', (req, res) => {
     let data = req.body;
-    let id = data.id;
+    let bookId = data.bookId;
     let sql = 'select * from book where id=?';
-    pool.query(sql, [id], (err, result) => {
+    pool.query(sql, [bookId], (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
             res.send({code: 200, book: result})
@@ -38,7 +50,11 @@ router.post('/detail', (req, res) => {
     });
 });
 
-//获取章节 根据bookId
+/**
+ * 获取章节
+ * bookId 书籍编号
+ * 测试url http://localhost:3333/book/chapterList
+ */
 router.post('/chapterList', (req, res) => {
     let data = req.body;
     let bookId = data.bookId;
@@ -54,6 +70,11 @@ router.post('/chapterList', (req, res) => {
     });
 });
 //获取确定章节内容 根据章节id
+/**
+ * 获取确定章节内容
+ * chapterId 根据章节
+ * 测试url http://localhost:3333/book/chapter
+ */
 router.post('/chapter', (req, res) => {
     let data = req.body;
     let chapterId = data.chapterId;
