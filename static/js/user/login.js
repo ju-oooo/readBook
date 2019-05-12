@@ -1,5 +1,4 @@
 (function () {
-
     let username = document.getElementById("username");
     let umsg = document.getElementById("umsg");
     /*光标移出username*/
@@ -10,7 +9,7 @@
             msg = getType($unameVal);
             if (msg !== 'error') {
                 msg = '账号格式正确';
-                ajax_findUsername.call(umsg, $unameVal);
+                ajax_findUsername($unameVal);
             } else {
                 msg = '账号格式错误';
             }
@@ -68,11 +67,7 @@
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let result = JSON.parse(xhr.responseText);
-                if (result.code === 200) {
-                    umsg.innerText = "账号格式正确"
-                } else {
-                    umsg.innerText = "账号不存在"
-                }
+                umsg.innerText = result.code === 200 ? "账号格式正确" : "该账号不存在，请注册。。。";
             }
         }
     }
@@ -95,8 +90,7 @@
         }
     }
 
-
-    /*登录格式验证*/
+    /*格式验证*/
     function validateLogin({username, password}) {
         let msg;
         if (getType(username) !== 'error') {
@@ -126,7 +120,7 @@
         }
     }
 
-    //封装xhr
+    /*封装xhr*/
     function getXhr({type, url, data}) {
         let xhr = new XMLHttpRequest();
         xhr.open('post', url, true);

@@ -5,7 +5,7 @@
     <title>register</title>
     <link rel="stylesheet" href="../../css/book/book-public.css">
     <link rel="stylesheet" href="../../css/user/user-register.css">
-    <script src="../../js/user/register.js"></script>
+    <script defer src="../../js/user/register.js"></script>
 </head>
 <body>
 <header>
@@ -18,22 +18,19 @@
             <a href="./login.html" class="to-login">已有账号，去登陆</a>
         </p>
         <div>
-            <input type="text" id="username" placeholder="请输入账号"
-                   onblur="username_blur()" onfocus="username_focus()"/>
+            <input type="text" id="username" placeholder="请输入账号"/>
             <span id="umsg"></span>
         </div>
         <div>
-            <input type="password" id="password1" placeholder="请输入密码"
-                   onblur="password1_blur()" onfocus="password1_focus()"/>
+            <input type="password" id="password1" placeholder="请输入密码"/>
             <span id="p1msg"></span>
         </div>
         <div>
-            <input type="password" id="password2" placeholder="请输入确认密码"
-                   onblur="password2_blur()" onfocus="password2_focus()"/>
+            <input type="password" id="password2" placeholder="请输入确认密码"/>
             <span id="p2msg"></span>
         </div>
         <div>
-            <button onclick="register()">注册</button>
+            <button id="register">注册</button>
         </div>
     </div>
 </section>
