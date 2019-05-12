@@ -1,113 +1,139 @@
-/*光标移出username*/
-function username_blur() {
-    let $unameVal = username.value;
-    let msg;
-    if ($unameVal) {
-        msg = getType($unameVal)
-        if (msg !== 'error') {
-            msg = '账号格式正确';
+(function () {
 
+    let username = document.getElementById("username");
+    let umsg = document.getElementById("umsg");
+    /*光标移出username*/
+    username.onblur = function () {
+        let msg = '';
+        let $unameVal = this.value;
+        if ($unameVal) {
+            msg = getType($unameVal);
+            if (msg !== 'error') {
+                msg = '账号格式正确';
+                ajax_findUsername.call(umsg, $unameVal);
+            } else {
+                msg = '账号格式错误';
+            }
+        } else {
+            msg = '账号不能为空'
+        }
+        umsg.innerText = msg
+    }
+    /*光标进入username*/
+    username.onfocus = function () {
+        umsg.innerText = '可使用 账号/手机号/邮箱/身份证号登录'
+    }
+
+    let password = document.getElementById("password");
+    let pmsg = document.getElementById("pmsg");
+    /*光标移出password*/
+    password.onblur = function () {
+        let $upwdVal = this.value;
+        let msg = '';
+        if ($upwdVal) {
+            // msg = getType($upwdVal)
+            if (msg === 'error') {
+                msg = '密码格式错误';
+            } else {
+                msg = '密码格式正确'
+            }
+        } else {
+            msg = '密码不能为空'
+        }
+        pmsg.innerText = msg
+
+    }
+    /*光标进入password*/
+    password.onfocus = function () {
+        pmsg.innerText = '密码长度为6-12'
+    }
+
+    /*单击login*/
+    let login = document.getElementById("login");
+    login.onclick = function () {
+        let data = {username: username.value, password: password.value};
+        let msg = validateLogin(data);
+        if (msg === 'success') {
+            ajax_login(data)
+        } else {
+            alert(msg)
+        }
+    }
+
+    /*检测用户名是否存在*/
+    function ajax_findUsername(username) {
+        let url = '/user/findUsername';
+        let formData = `username=${username}`;
+        let xhr = getXhr({type: 'post', url: url, data: formData});
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let result = JSON.parse(xhr.responseText);
+                if (result.code === 200) {
+                    umsg.innerText = "账号格式正确"
+                } else {
+                    umsg.innerText = "账号不存在"
+                }
+            }
+        }
+    }
+
+    /*登录*/
+    function ajax_login(data) {
+        let url = '/user/login';
+        let formData = `username=${data.username}&password=${data.password}`;
+        let xhr = getXhr({type: 'post', url: url, data: formData});
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let result = JSON.parse(xhr.responseText);
+                if (result.code === 200) {
+                    console.log(200)
+                    open('../../book/book-index.html', "_self")
+                } else {
+                    alert(result.msg)
+                }
+            }
+        }
+    }
+
+
+    /*登录格式验证*/
+    function validateLogin({username, password}) {
+        let msg;
+        if (getType(username) !== 'error') {
+            if (password) {
+                msg = 'success';
+            } else {
+                msg = '密码格式错误';
+            }
         } else {
             msg = '账号格式错误';
         }
-    } else {
-        msg = '账号不能为空'
+        return msg;
     }
-    umsg.innerText = msg
-}
 
-/*光标进入username*/
-function username_focus() {
-    umsg.innerText = '可使用 账号/手机号/邮箱/身份证号登录'
-}
-
-/*光标移出password*/
-function password_blur() {
-    let $upwdVal = password.value;
-    let msg = '';
-    if ($upwdVal) {
-        // msg = getType($upwdVal)
-        if (msg === 'error') {
-            msg = '密码格式错误';
+    /*获取username类型*/
+    function getType(param) {
+        if (/^\d{10}$/.test(param)) {
+            return 'username';
+        } else if (/^1[34578]\d{9}$/.test(param)) {
+            return 'phone';
+        } else if (/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(param)) {
+            return 'card';
+        } else if (/^(?:[a-zA-Z0-9]+[_\-\+\.]?)*[a-zA-Z0-9]+@(?:([a-zA-Z0-9]+[_\-]?)*[a-zA-Z0-9]+\.)+([a-zA-Z]{2,})+$/.test(param)) {
+            return 'email';
         } else {
-            msg = '密码格式正确'
-        }
-    } else {
-        msg = '密码不能为空'
-    }
-    pmsg.innerText = msg
-
-}
-
-/*光标进入password*/
-function password_focus() {
-    pmsg.innerText = '密码长度为6-12'
-}
-
-function login() {
-    let $uname = username.value;
-    let $upwd = password.value;
-    let data = {username: $uname, password: $upwd};
-    let msg = validateLogin(data);
-    if (msg === 'success') {
-        ajax_login(data)
-    } else {
-        alert(msg)
-    }
-
-}
-
-function ajax_login(data) {
-
-    let url = '/user/login';
-    let formData = `username=${data.username}&password=${data.password}`;
-    let xhr = getXhr('post',url,formData);
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.responseText)
-            //    暂未处理返回数据  跳转到首页
+            return 'error';
         }
     }
-}
 
-
-/*登录格式验证*/
-function validateLogin(data) {
-    let msg;
-    if (getType(data.username) !== 'error') {
-        if (data.password) {
-            msg = 'success';
-        } else {
-            msg = '密码格式不正确';
+    //封装xhr
+    function getXhr({type, url, data}) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('post', url, true);
+        if (type === 'post') {
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
         }
-    } else {
-        msg = '用户名格式不正确';
+        xhr.send(data);
+        return xhr;
     }
-    return msg;
-}
-
-/*获取username类型*/
-function getType(param) {
-    if (/^\d{10}$/.test(param)) {
-        return 'username';
-    } else if (/^1[34578]\d{9}$/.test(param)) {
-        return 'phone';
-    } else if (/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(param)) {
-        return 'card';
-    } else if (/^(?:[a-zA-Z0-9]+[_\-\+\.]?)*[a-zA-Z0-9]+@(?:([a-zA-Z0-9]+[_\-]?)*[a-zA-Z0-9]+\.)+([a-zA-Z]{2,})+$/.test(param)) {
-        return 'email';
-    } else {
-        return 'error';
-    }
-}
-
-//简单封装xhr
-function getXhr(type, url, data) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('post', url, true);
-    if (type === 'post') {
-        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-    }
-    xhr.send(data);
-    return xhr;
-}
+})();

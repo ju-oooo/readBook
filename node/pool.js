@@ -5,7 +5,7 @@ let pool = mysql.createPool({
     user: 'root',
     password: '',
     database: 'pro',
-    connectionLimit: 15
+    connectionLimit: 15,
     // debug:true
 });
 module.exports = pool;

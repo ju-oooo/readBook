@@ -33,7 +33,6 @@ router.post('/register', (req, res) => {
         let sql = `insert into user (username,password,${data.type})value(?,?,?)`;
         pool.query(sql, [data.username, data.password, data.typeValue], (err, result) => {
             try {
-
                 if (result.affectedRows > 0) {
                     res.send({code: 200, msg: '注册成功'})
                 } else {
@@ -53,6 +52,7 @@ router.post('/register', (req, res) => {
 router.post('/findUsername', (req, res) => {
     let data = req.body;
     let username = data.username;
+    console.log(username);
     let type = userTool.getType(username);
     if (type !== 'error') {
         let sql = `select * from user where ${type}=?`;

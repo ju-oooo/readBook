@@ -5,7 +5,7 @@
     <title>login</title>
     <link rel="stylesheet" href="../../css/book/book-public.css">
     <link rel="stylesheet" href="../../css/user/user-login.css">
-    <script src="../../js/user/login.js"></script>
+    <script defer src="../../js/user/login.js"></script>
 </head>
 <body>
 <header>
@@ -21,14 +21,12 @@
         <div>
             <!--可以使用手机号，邮箱，账号-->
 
-            <input type="text" id="username" placeholder="账号/手机号/邮箱/身份证号"
-                   onblur="username_blur()" onfocus="username_focus()">
+            <input type="text" id="username" placeholder="账号/手机号/邮箱/身份证号">
             <span id="umsg"></span>
         </div>
         <div>
 
-            <input type="password" id="password" placeholder="请输入密码"
-                   onblur="password_blur()" onfocus="password_focus()">
+            <input type="password" id="password" placeholder="请输入密码">
             <span id="pmsg"></span>
         </div>
         <div class="auto">
@@ -37,7 +35,7 @@
             <a href="#" class="forget">忘记密码</a>
         </div>
         <div>
-            <button onclick="login()">登&nbsp;录</button>
+            <button id="login">登&nbsp;录</button>
         </div>
     </div>
 </section>
