@@ -81,7 +81,7 @@ body {
             vertical-align: middle; }
         body .content .left .catalogue .catalogue-content {
           background-color: #fff;
-          height: 14.5rem;
+          height: 26.5rem;
           overflow-y: auto;
           transition: height 2s;
           scrollbar-base-color: #e43a2e;
