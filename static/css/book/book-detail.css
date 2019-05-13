@@ -252,18 +252,16 @@ section {
 }
 
 .comment-other .community-like {
-    padding-right: 1rem;
+    font-size: 1.2rem;
+    margin-right: 1rem;
     color: #9e9e9e;
-}
-
-.comment-other .community-comment {
-    padding-left: 1rem;
-    color: #9e9e9e;
+    cursor: pointer;
 }
 
 .comment-other .community-reply {
-    float: right;
+    font-size: 1.2rem;
     color: #9e9e9e;
+    cursor: pointer;
 }
 
 .community-right {
@@ -315,6 +313,7 @@ section {
     white-space: nowrap;
     text-overflow: ellipsis;
     color: #9e9e9e;
+    font-size: 0.8rem;
 }
 
 /*推荐 end*/
