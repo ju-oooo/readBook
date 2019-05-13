@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>post</title>
+	<script src="js/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    /**
+     * 获取书籍列表
+     * pageNum 页数
+     * count 一页显示总数
+     * 测试url http://localhost:3333/book/list
+     */
+    // (function () {
+    //     $.post(
+    //         "http://localhost:3333/book/list",
+    //         {
+    //             pageNum: 2,
+    //             count: 20
+    //         },
+    //         function (data) {
+    //             document.write(JSON.stringify(data));
+    //         })
+    // })();
+
+    /**
+     * 获取书籍详细信息
+     * bookId 书籍编号
+     * 测试url http://localhost:3333/book/detail
+     */
+    // (function () {
+    //     $.post(
+    //         "http://localhost:3333/book/detail",
+    //         {
+    //             bookId: '00000000881'
+    //         },
+    //         function (data) {
+    //             document.write(JSON.stringify(data));
+    //         })
+    // })();
+    // /**
+    //  * 获取章节
+    //  * bookId 书籍编号
+    //  * 测试url http://localhost:3333/book/chapterList
+    //  */
+    // (function () {
+    //     $.post(
+    //         "http://localhost:3333/book/chapterList",
+    //         {
+    //             bookId: '00000000881'
+    //         },
+    //         function (data) {
+    //             document.write(JSON.stringify(data));
+    //         })
+    // })();
+    /**
+     * 获取确定章节内容
+     * chapterId 根据章节
+     * 测试url http://localhost:3333/book/chapter
+     */
+    (function () {
+        $.post(
+            "http://localhost:3333/book/chapter",
+            {
+                chapterId: '0000007627'
+            },
+            function (data) {
+                document.write(JSON.stringify(data));
+            })
+    })();
+</script>
+</body>
+</html>
