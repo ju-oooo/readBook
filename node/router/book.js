@@ -3,7 +3,25 @@ const pool = require('../pool');
 const router = express.Router();
 
 /**
- * 获取书籍列表
+ * 获取书籍类型列表
+ * 测试url http://localhost:3333/book/type
+ */
+router.post('/type', (req, res) => {
+    let sql = 'select * from book_type';
+    pool.query(sql, (err, result) => {
+        if (err) throw  err;
+        if (result.length > 0) {
+            res.send({code: 200, typeList: result})
+        } else {
+            // res.redirect()//进行重定向
+            res.send({code: 500, msg: '服务器内部错误'})
+        }
+    });
+});
+
+/**
+ * 获取书籍列表  目前仅随机抽取数据
+ * type 类型
  * pageNum 页数
  * count 一页显示总数
  * 测试url http://localhost:3333/book/list
@@ -12,16 +30,15 @@ router.post('/list', (req, res) => {
     let data = req.body
     let pageNum = parseInt(data.pageNum);
     let count = parseInt(data.count);
+    let type = parseInt(data.type);
     if (isNaN(count) || count < 5 && !isNaN(pageNum) && pageNum < 0) {
         count = 5;
         pageNum = 0;
     }
-
-    let sql = 'select * from book order by id limit ?,?';
-    pool.query(sql, [pageNum, count], (err, result) => {
+    let sql = 'select * from book where typeId=? order by rand() limit ?,?';
+    pool.query(sql, [type, pageNum, count], (err, result) => {
         if (err) throw  err;
         if (result.length > 0) {
-            console.log(result)
             res.send({code: 200, bookList: result})
         } else {
             // res.redirect()//进行重定向
@@ -51,7 +68,7 @@ router.post('/detail', (req, res) => {
 });
 
 /**
- * 获取章节
+ * 获取章节目录
  * bookId 书籍编号
  * 测试url http://localhost:3333/book/chapterList
  */
@@ -69,9 +86,8 @@ router.post('/chapterList', (req, res) => {
         }
     });
 });
-//获取确定章节内容 根据章节id
 /**
- * 获取确定章节内容
+ * 获取章节内容
  * chapterId 根据章节
  * 测试url http://localhost:3333/book/chapter
  */

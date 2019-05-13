@@ -19,15 +19,9 @@ section {
     clear: both;
 }
 
-.option-row {
-    width: 100%;
-}
-
-.option-row,
-.option-row .option {
+.option {
     float: left;
 }
-
 
 .option-type {
     float: left;
@@ -35,37 +29,36 @@ section {
     padding-top: 1.1rem;
 }
 
-.option-row ul {
+.option-menu ul {
     border-bottom: 0.01rem solid #f0f0f0;
     margin-left: 3rem;
     padding: 0.5rem 0;
 }
 
-.option-row ul li {
+.option-menu ul li {
     padding: 0.25rem 0;
     margin: 0.25rem 0.25rem;
 }
 
-.option-row .option a {
+.option a {
     padding: 0 1rem;
     color: #212121;
     cursor: pointer;
 }
 
-.option-row .option {
+.option {
     border: 0.05rem solid transparent;
     border-radius: 2rem;
 }
 
-.option-row .option:hover {
+.option:hover {
     border: 0.05rem solid #ff2a00;
 }
 
-.option-row .option.active {
+.option.active {
     background-color: #ff2a00;
 }
-
-.option-row .option.active a {
+.option.active a {
     color: #fff;
 }
 
@@ -152,7 +145,7 @@ section {
 
 .book-left img {
     width: 100%;
-    transition: transform 2s;
+    transition: transform 0.5s;
 }
 
 .book-left img:hover {
