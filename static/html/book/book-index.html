@@ -5,6 +5,7 @@
 	<title>index</title>
 	<link rel="stylesheet" href="../../css/book/book-public.css">
 	<link rel="stylesheet" href="../../css/book/book-index.css">
+	<script src="../../js/jquery.min.js"></script>
 	<script src="../../js/book/book-index.js"></script>
 </head>
 <body>
@@ -29,12 +30,10 @@
 	<!--  畅销图书 start -->
 	<!-- 标题类型 start-->
 	<div class="tag-title">
-		<p>出版图书</p>
-		<ul class="catalog">
-			<li><a href="#">小说dfgsdfg</a></li>
-			<li><a href="#">小说dfgsdfg</a></li>
-			<li><a href="#">小说sdfgs</a></li>
-			<li><a href="#">小说fdgsdfg</a></li>
+		<p>热门图书</p>
+		<ul id="hotBook" class="catalog">
+<!--			<li><a href="#">小说dfgsdfg</a></li>-->
+
 		</ul>
 	</div>
 	<!-- 标题类型 end -->
@@ -42,36 +41,22 @@
 	<div class="tag-content">
 		<!-- 左侧 start-->
 		<div class="content-left">
-			<p class="book-name">Lorem ipsum dolor</p>
-			<p class="book-author">Lorem ipsum dolor</p>
-			<p class="detail">Lorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum
-				dolor</p>
-			<img src="../../image/book/book.jpg" alt="">
+<!--			<p class="book-name">Lorem ipsum dolor</p>-->
+<!--			<p class="book-author">Lorem ipsum dolor</p>-->
+<!--			<p class="detail">Lorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum-->
+<!--				dolor</p>-->
+<!--			<img src="../../image/book/book.jpg" alt="">-->
 		</div>
 		<!-- 左侧 end-->
 		<!-- 中间 start-->
 		<div class="content-center">
 			<ul>
-				<li>
-					<a href="#" class="book-img"><img src="../../image/book/book1.jpg" alt=""></a>
-					<a href="#" class="book-name">Lorem ipsum dolor sit amet.</a>
-					<a href="#" class="book-author">Lorem </a>
-				</li>
-				<li>
-					<a href="#" class="book-img"><img src="../../image/book/book2.jpg" alt=""></a>
-					<a href="#" class="book-name">Lorem ipsum dolor sit amet.</a>
-					<a href="#" class="book-author">Lorem </a>
-				</li>
-				<li>
-					<a href="#" class="book-img"><img src="../../image/book/book3.jpg" alt=""></a>
-					<a href="#" class="book-name">Lorem ipsum dolor sit amet.</a>
-					<a href="#" class="book-author">Lorem </a>
-				</li>
-				<li>
-					<a href="#" class="book-img"><img src="../../image/book/book4.jpg" alt=""></a>
-					<a href="#" class="book-name">Lorem ipsum dolor sit amet.</a>
-					<a href="#" class="book-author">Lorem </a>
-				</li>
+<!--				<li>-->
+<!--					<a href="#" class="book-img"><img src="../../image/book/book1.jpg" alt=""></a>-->
+<!--					<a href="#" class="book-name">Lorem ipsum dolor sit amet.</a>-->
+<!--					<a href="#" class="book-author">Lorem </a>-->
+<!--				</li>-->
+
 			</ul>
 		</div>
 		<!-- 中间 end-->
@@ -79,146 +64,21 @@
 		<div class="content-right">
 			<p class="book-popular">畅销榜</p>
 			<ul>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li class="active">
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
-				<li>
-					<span>1</span>
-					<dl class="close">
-						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>
-						<span class="book-view-count">1507</span>
-					</dl>
-					<dl class="show">
-						<div class="book-img">
-							<img src="../../image/book/book.jpg" alt="">
-						</div>
-						<a href="#" class="book-name">平凡的世界（全三册）</a>
-						<p class="book-view-count">1507</p>
-					</dl>
-				</li>
+<!--				<li class="active">-->
+<!--					<span>1</span>-->
+<!--					<dl class="close">-->
+<!--						<a href="#" class="book-name">平凡的世界平凡的世界平凡的世界（全三册）</a>-->
+<!--						<span class="book-view-count">1507</span>-->
+<!--					</dl>-->
+<!--					<dl class="show">-->
+<!--						<div class="book-img">-->
+<!--							<img src="../../image/book/book.jpg" alt="">-->
+<!--						</div>-->
+<!--						<a href="#" class="book-name">平凡的世界（全三册）</a>-->
+<!--						<p class="book-view-count">1507</p>-->
+<!--					</dl>-->
+<!--				</li>-->
+
 			</ul>
 		</div>
 		<!-- 右侧 end-->

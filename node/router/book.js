@@ -3,6 +3,28 @@ const pool = require('../pool');
 const router = express.Router();
 
 /**
+ * 获取书籍列表  目前仅随机抽取数据
+ * count 获取条数
+ * 测试url http://localhost:3333/book/hotBook
+ */
+router.post('/hotBook', (req, res) => {
+    let data = req.body;
+    let count = parseInt(data.count);
+    if (isNaN(count) || count < 5) {
+        count = 20;
+    }
+    let sql = 'select * from book order by rand() limit 0,?';
+    pool.query(sql, [count], (err, result) => {
+        if (err) throw  err;
+        if (result.length > 0) {
+            res.send({code: 200, bookList: result})
+        } else {
+            // res.redirect()//进行重定向
+            res.send({code: 500, msg: '服务器内部错误'})
+        }
+    });
+});
+/**
  * 获取书籍类型列表
  * 测试url http://localhost:3333/book/type
  */
@@ -27,13 +49,14 @@ router.post('/type', (req, res) => {
  * 测试url http://localhost:3333/book/list
  */
 router.post('/list', (req, res) => {
-    let data = req.body
+    let data = req.body;
     let pageNum = parseInt(data.pageNum);
     let count = parseInt(data.count);
     let type = parseInt(data.type);
-    if (isNaN(count) || count < 5 && !isNaN(pageNum) && pageNum < 0) {
-        count = 5;
+    if (isNaN(type) && isNaN(count) || count < 5 && !isNaN(pageNum) && pageNum < 0) {
+        count = 20;
         pageNum = 0;
+        type = 11;
     }
     let sql = 'select * from book where typeId=? order by rand() limit ?,?';
     pool.query(sql, [type, pageNum, count], (err, result) => {

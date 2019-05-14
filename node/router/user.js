@@ -36,7 +36,7 @@ router.post('/register', (req, res) => {
                 if (result.affectedRows > 0) {
                     res.send({code: 200, msg: '注册成功'})
                 } else {
-                    res.send({code: 200, msg: '注册失败'})
+                    res.send({code: 201, msg: '注册失败'})
                 }
             } catch (err) {
                 res.send({code: 500, msg: '服务器内部错误'})
@@ -52,7 +52,6 @@ router.post('/register', (req, res) => {
 router.post('/findUsername', (req, res) => {
     let data = req.body;
     let username = data.username;
-    console.log(username);
     let type = userTool.getType(username);
     if (type !== 'error') {
         let sql = `select * from user where ${type}=?`;
