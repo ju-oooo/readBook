@@ -1,11 +1,7 @@
-(function () {
-    //内容生成
-    $.post(
-        "http://localhost:3333/book/type", {
-            type: 93,
-            pageNum: 2,
-            count: 20
-        },
+//页面加载完成绑定事件
+$(function () {
+    //默认初始化数据 内容生成
+    $.post("http://localhost:3333/book/type",
         function (data) {
             if (data.code === 200) {
                 let type_html = '';
@@ -14,21 +10,26 @@
                 });
                 $('.option-menu ul').html(type_html);
                 $('.option-menu ul li:first-child').addClass('active');
+                //初始化书籍列表
+                getBookList($('ul.book-list'), data.typeList[0].id);
             } else {
                 alert(data.msg);
             }
         });
-})();
-//页面加载完成绑定事件
-window.onload = function () {
-    //默认初始化数据
-    getBookList($('ul.book-list'), $('.option-menu .active a').attr('data-type'));
+
     //点击类型获取相应数据
     $('.option-menu').on('click', '.option', function () {
         $('.option-menu li.active').removeClass('active');
         let typeId = $(this).addClass('active').children('a').attr('data-type');
         getBookList($('ul.book-list'), typeId);
     });
+
+    //事件绑定之页面跳转
+    $('section').on('click', '[data-book]', function () {
+        let bid = $(this).attr('data-book');
+        window.open(`book-detail.html?bid=${bid}`, "_self");
+    });
+
     //获取书籍列表
     function getBookList(bookList, typeId) {
         $.post('http://localhost:3333/book/list',
@@ -44,7 +45,7 @@ window.onload = function () {
                                 <div class="book-left">
                                     <div class="book-image">
                                       <a href="javascript:;" data-book="${book.id}">
-                                        <img src="${book.image}" alt="">
+                                        <img src="${book.image}" alt="" data-book="${book.id}" onerror="javascript:this.src='../../image/book/book.jpg';">
                                       </a>
                                     </div>
                                 </div>
@@ -54,7 +55,7 @@ window.onload = function () {
                                     </p>
                                     <p class="book-author">${book.author}</p>
                                     <p class="book-numberWord">
-                                      字数:<span>${book.numberWord}</span>
+                                      字数:&nbsp;<span>${book.numberWord}</span>
                                     </p>
                                     <p class="book-brief">${book.introduce}</p>
                                 </div>
@@ -67,4 +68,4 @@ window.onload = function () {
             }
         )
     }
-}
+});

@@ -53,7 +53,7 @@ router.post('/list', (req, res) => {
     let pageNum = parseInt(data.pageNum);
     let count = parseInt(data.count);
     let type = parseInt(data.type);
-    if (isNaN(type) && isNaN(count) || count < 5 && !isNaN(pageNum) && pageNum < 0) {
+    if (isNaN(type) | isNaN(count) | count < 5 | isNaN(pageNum) | pageNum < 0) {
         count = 20;
         pageNum = 0;
         type = 11;
