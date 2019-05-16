@@ -56,16 +56,12 @@ section {
     padding-bottom: 1rem;
 }
 
-.detail-name a {
+.book-detail .detail-name{
     color: #212121;
     font-size: 1.5rem;
 }
 
-.detail-name a:hover {
-    color: #f26552;
-}
-
-.detail-name + p span {
+.book-detail .detail-name + p span {
     font-size: 0.8rem;
     margin-right: 1rem;
     color: #9e9e9e;
@@ -104,19 +100,6 @@ section {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-}
-
-.detail-show {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    color: #9e9e9e;
-    display: block;
-    float: right;
-}
-
-.detail-show:hover {
-    color: #F26552;
-    cursor: pointer;
 }
 
 .detail-right li:last-child::after {

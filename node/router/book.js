@@ -60,9 +60,12 @@ router.post('/list', (req, res) => {
     }
     let sql = 'select * from book where typeId=? order by rand() limit ?,?';
     pool.query(sql, [type, pageNum, count], (err, result) => {
+        console.log(result)
         if (err) throw  err;
         if (result.length > 0) {
             res.send({code: 200, bookList: result})
+        }else if(result.length === 0){
+            res.send({code: 201, msg: "暂无此类书籍"})
         } else {
             // res.redirect()//进行重定向
             res.send({code: 500, msg: '服务器内部错误'})
@@ -80,9 +83,10 @@ router.post('/detail', (req, res) => {
     let bookId = data.bookId;
     let sql = 'select * from book where id=?';
     pool.query(sql, [bookId], (err, result) => {
+        console.log(result)
         if (err) throw err;
         if (result.length > 0) {
-            res.send({code: 200, book: result})
+            res.send({code: 200, book: result[0]})
         } else {
             // res.redirect()//进行重定向
             res.send({code: 500, msg: '服务器内部错误'})

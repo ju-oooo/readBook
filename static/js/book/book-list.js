@@ -62,6 +62,8 @@ $(function () {
                             </li>`;
                     });
                     bookList.html(list_html);
+                } else if (data.code === 201) {
+                    alert(data.msg);
                 } else {
                     alert(data.msg);
                 }

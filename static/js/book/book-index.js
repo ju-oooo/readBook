@@ -41,36 +41,39 @@ $(function () {
 
         // 热门书籍 内容生成
         function contentOut(bookList) {
-            let content_left_html = `<p class="book-name" data-book="${bookList[0].id}">${bookList[0].bookName}</p>
-                                <p class="book-author">${bookList[0].author}</p>
-                                <p class="detail">${bookList[0].introduce}</p>
-                                <img src="${bookList[0].image}" alt="" data-book="${bookList[0].id}" onerror="javascript:this.src='../../image/book/book.jpg';">`;
+            let item = bookList[0];
+            let content_left_html = `<p class="book-name" data-book="${item.id}">${item.bookName}</p>
+                                <p class="book-author">${item.author}</p>
+                                <p class="detail">${item.introduce}</p>
+                                <img src="${item.image}" alt="" data-book="${item.id}" onerror="javascript:this.src='../../image/book/book.jpg';">`;
             $('.content-left').html(content_left_html);
             let content_center_html = '';
             for (let index = 1; index < 5; index++) {
+                let item = bookList[index];
                 content_center_html += `<li>
-                                        <a href="javascript:;" data-book="${bookList[index].id}" class="book-img">
-                                         <img src="${bookList[index].image}" alt="" data-book="${bookList[index].id}" onerror="javascript:this.src='../../image/book/book.jpg';">
+                                        <a href="javascript:;" data-book="${item.id}" class="book-img">
+                                         <img src="${item.image}" alt="" data-book="${item.id}" onerror="javascript:this.src='../../image/book/book.jpg';">
                                         </a>
-                                        <a href="javascript:;" data-book="${bookList[index].id}" class="book-name">${bookList[index].bookName.slice(0, 20)}</a>
-                                        <a href="javascript:;" class="book-author">${bookList[index].author}</a>
+                                        <a href="javascript:;" data-book="${item.id}" class="book-name">${item.bookName.slice(0, 20)}</a>
+                                        <a href="javascript:;" class="book-author">${item.author}</a>
                                     </li>`;
             }
             $('.content-center ul').html(content_center_html);
             let content_right_html = '';
             for (let index = 5; index < 15; index++) {
+                let item = bookList[index];
                 content_right_html += `<li>
                                     <span>${index - 4}</span>
                                     <dl class="close">
-                                        <a href="javascript:;" class="book-name"  data-book="${bookList[index].id}">${bookList[index].bookName}</a>
-                                        <span class="book-view-count">${bookList[index].numberWord}&nbsp;字</span>
+                                        <a href="javascript:;" class="book-name"  data-book="${item.id}">${item.bookName}</a>
+                                        <span class="book-view-count">${item.numberWord}&nbsp;字</span>
                                     </dl>
                                     <dl class="show">
                                         <div class="book-img">
-                                          <img src="${bookList[index].image}" alt="" data-book="${bookList[index].id}" onerror="javascript:this.src='../../image/book/book.jpg';">
+                                          <img src="${item.image}" alt="" data-book="${item.id}" onerror="javascript:this.src='../../image/book/book.jpg';">
                                         </div>
-                                        <a href="javascript:;" class="book-name" data-book="${bookList[index].id}">${bookList[index].bookName}</a>
-                                        <p class="book-view-count">${bookList[index].numberWord}&nbsp;字</p>
+                                        <a href="javascript:;" class="book-name" data-book="${item.id}">${item.bookName}</a>
+                                        <p class="book-view-count">${item.numberWord}&nbsp;字</p>
                                     </dl>
                                     </li>`;
             }
