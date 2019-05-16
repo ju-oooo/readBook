@@ -1,20 +1,95 @@
 $(function () {
-    console.log();
     let bid = location.search.slice(1).split('=')[1]
-
     getBookDetail(bid);
+    $.post(
+        "http://localhost:3333/book/hotBook",
+        {count: 10},
+        function (data) {
+            if (data.code === 200) {
+                hotBookOut(data.bookList)
+            } else {
+                alert(data.msg);
+            }
+        });
+    //事件绑定之页面跳转
+    $('section').on('click', '[data-book]', function () {
+        let bid = $(this).attr('data-book');
+        window.open(`book-detail.html?bid=${bid}`, "_self");
+    });
 
     function getBookDetail(bookId) {
         $.post(
             "http://localhost:3333/book/detail",
             {bookId: bookId},
             function (data) {
-                bookDetailOut(data.book)
-                console.log(data);
+                if (data.code === 200) {
+                    //获取推荐
+                    getRecommend(data.book.typeId);
+                    //显示详情
+                    bookDetailOut(data.book);
+                } else {
+                    alert(data.msg);
+                }
             });
+    }
 
-        function bookDetailOut(book) {
-            let bookDetail_html = `<div class="detail-left">
+    function getRecommend(typeId) {
+        $.post(
+            "http://localhost:3333/book/list",
+            {
+                type: typeId,
+                pageNum: 0,
+                count: 4
+            },
+            function (data) {
+                if (data.code === 200) {
+                    recommendOut(data.bookList);
+                } else {
+                    alert(data.msg);
+                }
+            });
+    }
+
+    function hotBookOut(bookList) {
+        let content_right_html = '';
+        bookList.forEach((elem, i) => {
+            console.log(i)
+            content_right_html += `<li>
+                                    <span>${i + 1}</span>
+                                    <dl class="close">
+                                        <a href="javascript:;" class="book-name"  data-book="${elem.id}">${elem.bookName}</a>
+                                        <span class="book-view-count">${numberFormat(elem.numberWord)}字</span>
+                                    </dl>
+                                    <dl class="show">
+                                        <div class="book-img">
+                                          <img src="${elem.image}" alt="" data-book="${elem.id}" onerror="javascript:this.src='../../image/book/book.jpg';">
+                                        </div>
+                                        <a href="javascript:;" class="book-name" data-book="${elem.id}">${elem.bookName}</a>
+                                        <p class="book-view-count">${numberFormat(elem.numberWord)}字</p>
+                                    </dl>
+                                    </li>`;
+        });
+        $('.popular-list').html(content_right_html).children('li:first-child').addClass('active');
+
+    }
+
+    function recommendOut(recommendList) {
+        let recommend_html = '';
+        recommendList.forEach((elem) => {
+            recommend_html +=
+                `<li class="recommend-detail">
+                        <a href="javascript:;"  data-book="${elem.id}" class="detail-img">
+                          <img src="${elem.image}" alt="" data-book="${elem.id}" onerror="javascript:this.src='../../image/book/book.jpg';">
+                        </a>
+                        <p class="detail-name" data-book="${elem.id}">${elem.bookName}</p>
+                        <p class="detail-author">${elem.author}</p>
+                    </li>`;
+        });
+        $('.recommend-list').html(recommend_html);
+    }
+
+    function bookDetailOut(book) {
+        let bookDetail_html = `<div class="detail-left">
                                     <div class="detail-img">
                                         <img src="${book.image}" alt="" data-book="${book.id}" onerror="javascript:this.src='../../image/book/book.jpg';">
                                     </div>
@@ -24,8 +99,8 @@ $(function () {
                                         <li>
                                             <p class="detail-name">${book.bookName}</p>
                                             <p>
-                                                <span class="detail-author">作者：${book.bookName}</span>
-                                                <span class="detail-numberWord">字数：${book.bookName}字</span>
+                                                <span class="detail-author">作者：${book.author}</span>
+                                                <span class="detail-numberWord">字数:&nbsp;${numberFormat(book.numberWord)}字</span>
                                                 <span class="detail-press">${book.press !== '' ? '出版社：' + book.press : ''}</span>
                                             </p>
                                         </li>
@@ -42,7 +117,19 @@ $(function () {
                                         </li>
                                     </ul>
                                 </div>`;
-            $('.book-detail').append(bookDetail_html)
+        $('.book-detail').append(bookDetail_html)
+    }
+
+    function numberFormat(num) {
+        if (num / 1000 > 1 && num / 1000 < 10) {
+            return (num / 1000).toFixed(1) + "千";
+        } else if (num / 10000 > 1 && num / 10000 < 10000) {
+            return (num / 10000).toFixed(1) + "万";
+        } else if (num / 1000000000 > 1 && num / 1000000000 < 10000) {
+            return (num / 10000).toFixed(1) + "亿";
+        } else {
+            return num.toFixed(1);
         }
     }
 });
+

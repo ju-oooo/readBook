@@ -55,7 +55,7 @@ $(function () {
                                     </p>
                                     <p class="book-author">${book.author}</p>
                                     <p class="book-numberWord">
-                                      字数:&nbsp;<span>${book.numberWord}</span>
+                                      字数:&nbsp;<span>${numberFormat(book.numberWord)}字</span>
                                     </p>
                                     <p class="book-brief">${book.introduce}</p>
                                 </div>
@@ -69,5 +69,17 @@ $(function () {
                 }
             }
         )
+    }
+
+    function numberFormat(num) {
+        if (num / 1000 > 1 && num / 1000 < 10) {
+            return (num / 1000).toFixed(1) + "千";
+        } else if (num / 10000 > 1 && num / 10000 < 10000) {
+            return (num / 10000).toFixed(1) + "万";
+        } else if (num / 1000000000 > 1 && num / 1000000000 < 10000) {
+            return (num / 10000).toFixed(1) + "亿";
+        } else {
+            return num.toFixed(1);
+        }
     }
 });
