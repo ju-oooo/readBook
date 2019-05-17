@@ -96,11 +96,13 @@ body {
       box-sizing: border-box;
       position: absolute;
       left: -15rem;
+      height: 100%;
 
       .catalogue {
         position: fixed;
         color: #212121;
         padding: 0.5rem 0.75rem;
+        z-index: 123;
 
         .title {
           padding: 0.5rem;
@@ -129,19 +131,23 @@ body {
           scrollbar-base-color: #e43a2e;
           scrollbar-arrow-color: #e43a2e;
           scrollbar-darkshadow-color: #e43a2e;
-
+          width: 14rem;
 
           li {
-            padding: 0.5rem 1rem;
-            border-bottom: 0.1rem dotted $light-gray;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-
-            &:hover {
-              cursor: pointer;
-              color: $jacinth;
-              background-color: $light-brown;
+            a {
+              display: block;
+              text-align: left;
+              padding: 0.5rem 1rem;
+              border-bottom: 0.1rem dotted $light-gray;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              color: $gray;
+              &:hover {
+                cursor: pointer;
+                color: $jacinth;
+                background-color: $light-brown;
+              }
             }
           }
 

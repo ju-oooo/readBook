@@ -23,6 +23,10 @@ $(function () {
                 alert(data.msg);
             }
         });
+
+    $('.book-popular').on('mouseover', 'li', function () {
+        $(this).addClass('active').siblings().removeClass('active')
+    });
     //事件绑定之页面跳转
     $('section').on('click', '[data-book]', function () {
         let bid = $(this).attr('data-book');
@@ -126,6 +130,7 @@ $(function () {
         $('.pop-content .pop-bottom ul').html(hotLikeBook_html);
     }
 
+    //数字格式化
     function numberFormat(num) {
         if (num / 1000 > 1 && num / 1000 < 10) {
             return (num / 1000).toFixed(1) + "千";

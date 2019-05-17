@@ -128,7 +128,7 @@ router.post('/chapterList', (req, res) => {
     pool.query(sql, [bookId], (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
-            res.send({code: 200, book: result})
+            res.send({code: 200, chapterList: result})
         } else {
             // res.redirect()//进行重定向
             res.send({code: 500, msg: '服务器内部错误'})
@@ -147,7 +147,7 @@ router.post('/chapter', (req, res) => {
     pool.query(sql, [chapterId], (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
-            res.send({code: 200, book: result})
+            res.send({code: 200, bookChapter: result[0]})
         } else {
             // res.redirect()//进行重定向
             res.send({code: 500, msg: '服务器内部错误'})

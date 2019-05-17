@@ -256,11 +256,11 @@
 }
 
 .content-right .active .show {
-    display: block !important;
+    display: block;
 }
 
 .content-right .active .close {
-    display: none !important;
+    display: none;
 }
 
 .content-right .show .book-img {

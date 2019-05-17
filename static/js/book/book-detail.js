@@ -17,6 +17,14 @@ $(function () {
         window.open(`book-detail.html?bid=${bid}`, "_self");
     });
 
+    $('.book-detail').on('click', '[data-read]', function () {
+        let bid = $(this).attr('data-read');
+        window.open(`book-read.html?bid=${bid}`, "read");
+    });
+
+    $('.book-popular').on('mouseover', 'li', function () {
+        $(this).addClass('active').siblings().removeClass('active')
+    });
     function getBookDetail(bookId) {
         $.post(
             "http://localhost:3333/book/detail",
@@ -53,7 +61,6 @@ $(function () {
     function hotBookOut(bookList) {
         let content_right_html = '';
         bookList.forEach((elem, i) => {
-            console.log(i)
             content_right_html += `<li>
                                     <span>${i + 1}</span>
                                     <dl class="close">
@@ -107,8 +114,8 @@ $(function () {
                                         <li>
                                             <p class="detail-price">价格：399阅饼 | 原价999阅饼</p>
                                             <p>
-                                                <a href="#" class="detail-try">免费试读</a>
-                                                <a href="#" class="detail-buy">购买</a>
+                                                <a href="javascript:;" class="detail-try" data-read="${book.id}">免费试读</a>
+                                                <a href="javascript:;" class="detail-buy">购买</a>
                                             </p>
                                         </li>
                                         <li>
