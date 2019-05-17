@@ -33,6 +33,24 @@ $(function () {
         window.open(`book-detail.html?bid=${bid}`, "_self");
     });
 
+    let picSize = $('nav-slide li').length;
+    let index = 0;
+
+    function nav_slide() {
+        if (index === picSize) {
+            index = 0;
+        }
+        console.log($(`.nav-slide li:eq(${index})`)[0])
+        $('nav-slide li').eq(index).css({
+            'margin-left': `${index * -75}rem`
+        });
+        index++;
+
+    }
+
+    let timer = setInterval(nav_slide, 3000);
+
+
     // 热门书籍 tag生成
     function hotBookOut(bookList) {
         let hotBook_html = '';

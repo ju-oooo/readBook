@@ -1,6 +1,6 @@
 /* 轮播图 start*/
 .nav {
-    height: 20rem;
+    height: 30rem;
     position: relative;
     overflow: hidden;
 }
@@ -11,7 +11,36 @@
 }
 
 .nav-slide li {
-    flex-shrink: 0;
+    width: 75rem;
+}
+
+.nav-slide li img {
+    width: 100%;
+
+}
+
+.nav .iconfont {
+    display: none;
+    font-size: 2rem;
+    font-weight: lighter;
+    position: absolute;
+    top: calc(50% - 2rem);
+    padding: 1rem 0.25rem;
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav .iconfont:hover {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.nav .icon-left {
+    left: 1rem;
+}
+
+.nav .icon-right {
+    right: 1rem;
 }
 
 /* 轮播图 end*/
@@ -278,10 +307,6 @@
 }
 
 .content-right .book-name {
-    color: #212121;
-}
-
-.content-right .book-name:hover {
     color: #f26552;
 }
 
@@ -342,6 +367,7 @@
     display: block;
     margin: 1.25rem auto;
 }
+
 .pop-top .pop-image + p:hover {
     cursor: pointer;
 }
@@ -392,6 +418,7 @@
 .pop-bottom .pop-image img {
     width: 100%;
 }
+
 .pop-bottom .pop-image img:hover {
     cursor: pointer;
 }
@@ -408,6 +435,7 @@
     margin-top: 0.25rem;
     color: #212121;
 }
+
 .pop-bottom .pop-bookName:hover {
     cursor: pointer;
 }
