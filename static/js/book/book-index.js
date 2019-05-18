@@ -33,22 +33,38 @@ $(function () {
         window.open(`book-detail.html?bid=${bid}`, "_self");
     });
 
-    let picSize = $('nav-slide li').length;
-    let index = 0;
+    $('.icon-right').click(function () {
+        nav_slide(true)
+    });
+    $('.icon-left').click(function () {
+        nav_slide(false)
+    });
 
-    function nav_slide() {
-        if (index === picSize) {
-            index = 0;
+    function nav_slide(flag) {
+        let $li = $('.nav-slide li').removeClass('active');
+        if (flag) {
+            $li.first().remove().clone().appendTo(`.nav-slide`);
+            $li.eq(1).addClass('active');
+        } else {
+            $li.last().remove().clone().insertBefore(`.nav-slide li:first-child`).addClass('active');
         }
-        console.log($(`.nav-slide li:eq(${index})`)[0])
-        $('nav-slide li').eq(index).css({
-            'margin-left': `${index * -75}rem`
-        });
-        index++;
-
     }
 
-    let timer = setInterval(nav_slide, 3000);
+    let timer = setInterval(nav_slide, 5000, true);
+    $('.nav').hover(function () {
+        $('.nav .iconfont').show()
+    }, function () {
+        $('.nav .iconfont').hide()
+    });
+    let callback = {
+        e: function () {
+            clearInterval(timer);
+        }, l: function () {
+            timer = setInterval(nav_slide, 5000, true);
+        }
+    }
+    $('.nav-slide').hover(callback.e, callback.l);
+    $('.nav .iconfont').hover(callback.e, callback.l);
 
 
     // 热门书籍 tag生成
@@ -135,7 +151,7 @@ $(function () {
     // 热门类型 内容下 生成
     function hotLikeBookOut(bookList) {
         let hotLikeBook_html = '';
-        for (let index = 0; index < 5; index++) {
+        for (let index = 10; index < 15; index++) {
             let item = bookList[index];
             hotLikeBook_html += `<li>
                                         <div class="pop-image">

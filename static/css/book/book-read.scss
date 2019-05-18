@@ -37,10 +37,19 @@ body {
         span {
           display: inline-block;
           color: $gray;
-          padding: 0.5rem 0;
+          height: 2rem;
+          vertical-align: middle;
+          max-width: 20rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
 
           .book-name {
             color: $light-jacinth;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
 
@@ -96,13 +105,11 @@ body {
       box-sizing: border-box;
       position: absolute;
       left: -15rem;
-      height: 100%;
 
       .catalogue {
         position: fixed;
         color: #212121;
         padding: 0.5rem 0.75rem;
-        z-index: 123;
 
         .title {
           padding: 0.5rem;
@@ -143,6 +150,12 @@ body {
               overflow: hidden;
               white-space: nowrap;
               color: $gray;
+
+              &.active {
+                color: $jacinth;
+                background-color: $light-brown;
+              }
+
               &:hover {
                 cursor: pointer;
                 color: $jacinth;
@@ -181,7 +194,7 @@ body {
         color: #212121;
         bottom: 2.5rem;
 
-        a {
+        .iconfont {
           text-align: center;
           color: $brown;
           width: 2.5rem;

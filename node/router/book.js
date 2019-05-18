@@ -86,7 +86,7 @@ router.post('/list', (req, res) => {
         if (err) throw  err;
         if (result.length > 0) {
             res.send({code: 200, bookList: result})
-        }else if(result.length === 0){
+        } else if (result.length === 0) {
             res.send({code: 201, msg: "暂无此类书籍"})
         } else {
             // res.redirect()//进行重定向
@@ -124,7 +124,7 @@ router.post('/detail', (req, res) => {
 router.post('/chapterList', (req, res) => {
     let data = req.body;
     let bookId = data.bookId;
-    let sql = 'select id,chapterNum,chapterName from book_content where bookId=?';
+    let sql = 'select bc.id,bc.bookId,b.bookName,bc.chapterNum,bc.chapterName from book b  join book_content bc on bc.bookId = b.id where bc.bookId =?';
     pool.query(sql, [bookId], (err, result) => {
         if (err) throw err;
         if (result.length > 0) {

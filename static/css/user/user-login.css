@@ -5,10 +5,12 @@ section {
     background-size: cover;
     min-height: 40rem;
 }
-section:before{
+
+section:before {
     content: "";
     display: table;
 }
+
 .login {
     width: 20rem;
     padding: 2rem;
@@ -75,24 +77,44 @@ section:before{
     display: inline-block;
     color: #9e9e9e;
 }
-.login .forget:hover{
+
+.login .elect {
     color: #ff2a00;
-}
-
-.login button {
-    width: 50%;
+    display: block;
+    margin: 0.25rem auto;
+    width: 100%;
+    border: 0.05rem solid #ff2a00;
+    padding: 0 1rem;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    position: relative;
     height: 2.5rem;
-    color: #fff;
-    background-color: #ff2a00;
-    border: none;
-    transition: width 1.2s;
-    margin-bottom: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    z-index: 1;
+    transition: all 0.3s;
 }
 
-.login button:hover {
-    cursor: pointer;
+.login .elect::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    display: block;
     background-color: #ff2a00;
+    transition: all 0.3s;
+}
+
+.login .elect:hover {
+    color: #ffffff;
+}
+
+.login .elect:hover::after {
     width: 100%;
 }
-
 

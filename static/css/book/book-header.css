@@ -39,20 +39,18 @@
 
 .header li.active a {
     color: #f26552;
-    border-color: #f26552;
+    border-color: #f26552 !important;
 }
 
 .header li:not(:first-child) a:hover {
     color: #f26552;
 }
 
-.header li:last-child {
+.header li.right{
     float: right;
-    margin-right: 2rem;
 }
 
-.header li:last-child a {
-    float: left;
+.header li.right a {
     border-radius: 1rem;
     font-size: 0.8rem;
     padding: 0.25rem 1rem;
@@ -60,6 +58,6 @@
     margin: 0.2rem 0.5rem;
 }
 
-.header li:last-child a:hover {
+.header li.right a:hover {
     border-color: #f26552;
 }
