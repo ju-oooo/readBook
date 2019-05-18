@@ -43,6 +43,7 @@ $(function () {
             });
     }
 
+    //头部及右侧刷新
     function correlationOut(chapterId) {
         let $chapterId = $(`.catalogue-content a[data-chapter="${chapterId}"]`);
         //高亮显示 正在看的目录名
