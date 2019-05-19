@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('../pool');
+const {getBaiduToken} = require('./baidu');
 const router = express.Router();
 
 /**
@@ -147,7 +148,9 @@ router.post('/chapter', (req, res) => {
     pool.query(sql, [chapterId], (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
-            res.send({code: 200, bookChapter: result[0]})
+            getBaiduToken().then(function (data) {
+                res.send({code: 200, bookChapter: result[0],audioTok:data.access_token});
+            });
         } else {
             // res.redirect()//进行重定向
             res.send({code: 500, msg: '服务器内部错误'})

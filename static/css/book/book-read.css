@@ -40,6 +40,8 @@ body {
           body .content .header p .play:hover {
             color: #e43a2e;
             cursor: pointer; }
+          body .content .header p .play.active {
+            color: #e43a2e; }
         body .content .header p .buy {
           vertical-align: middle;
           padding: 0.5rem;
@@ -63,6 +65,8 @@ body {
         text-indent: 2rem;
         line-height: 2rem;
         letter-spacing: 0.2rem; }
+        body .content .article p.active {
+          color: #e43a2e; }
     body .content .left {
       width: 15rem;
       padding-right: 0.25rem;
