@@ -1,0 +1,459 @@
+/* 轮播图 start*/
+.nav {
+    margin-top: 2rem;
+    height: 30rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-slide {
+    position: absolute;
+    display: flex;
+}
+
+.nav-slide li {
+    width: 75rem;
+    transition: margin-left 2s ease-in-out;
+}
+
+.nav-slide li.active {
+
+    margin-left: -75rem;
+}
+
+.nav-slide li img {
+    width: 100%;
+
+}
+
+.nav .iconfont {
+    display: none;
+    font-size: 2rem;
+    font-weight: lighter;
+    position: absolute;
+    top: calc(50% - 2rem);
+    padding: 1rem 0.25rem;
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav .iconfont:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.nav .icon-left {
+    left: 1rem;
+}
+
+.nav .icon-right {
+    right: 1rem;
+}
+
+/* 轮播图 end*/
+/* title start*/
+.tag-title {
+    height: 10rem;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.tag-title > p {
+    font-size: 1.5rem;
+    padding: 3rem 0 1.25rem 0;
+}
+
+.tag-title .catalog {
+    font-size: 0;
+}
+
+.tag-title .catalog > li {
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    border-right: 0.075rem solid #9e9e9e;
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+}
+
+.tag-title .catalog > li:last-child {
+    border-right: 0;
+}
+
+.tag-title .catalog a {
+    color: #9e9e9e;
+}
+
+.tag-title .catalog a:hover {
+    color: #f26552;
+}
+
+/* title end*/
+/* 1F start*/
+.tag-content {
+    height: 31rem;
+}
+
+.content-left, .content-center, .content-right {
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* content-left start */
+.content-left {
+    width: 33%;
+    padding: 2rem 3rem;
+    border-top: 0.05rem solid #f0f0f0;
+}
+
+.content-left > p {
+    margin-bottom: 1rem;
+}
+
+.content-left .book-name {
+    font-size: 1.5rem;
+    padding-top: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content-left .book-name:hover {
+    cursor: pointer;
+}
+
+.content-left .book-author,
+.content-left .detail {
+    font-size: 1rem;
+}
+
+.content-left .book-author {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content-left .detail {
+    color: #9e9e9e;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    height: 4.5rem;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.content-left > img {
+    width: 9rem;
+    float: right;
+    margin-top: 3rem;
+    box-shadow: 10px 15px 22px #ccc;
+}
+
+.content-left > img:hover {
+    cursor: pointer;
+}
+
+/* content-left end */
+/* content-center start */
+.content-center {
+    width: 34%;
+    border-left: 0.1rem solid #f0f0f0;
+    border-right: 0.05rem solid #f0f0f0;
+}
+
+.content-center ul::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.content-center li {
+    box-sizing: border-box;
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 0.05rem solid #f0f0f0;
+    padding: 1.85rem 3rem;
+}
+
+.content-center li a {
+    display: block;
+}
+
+.content-center img {
+    width: 6rem;
+    box-shadow: 10px 15px 22px #ccc;
+}
+
+.content-center .book-name, .content-center .book-author {
+    text-align: left;
+    padding-top: 0.5rem;
+}
+
+.content-center .book-name {
+    display: block;
+    color: #212121;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content-center .book-name:hover {
+    color: #f26552;
+}
+
+.content-center .book-author {
+    color: #9e9e9e;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+
+/* content-center end */
+/* content-right start */
+.content-right {
+    width: 33%;
+    border-top: 0.05rem solid #f0f0f0;
+    background-color: #fff;
+    padding: 1rem 1rem;
+}
+
+.content-right .book-popular {
+    height: 10%;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+.content-right ul {
+    height: 90%;
+    width: 100%;
+}
+
+.content-right li {
+    width: 100%;
+}
+
+.content-right li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.content-right li > span {
+    float: left;
+    width: 10%;
+    text-align: left;
+    color: #9e9e9e;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 0.65rem;
+}
+
+.content-right dl {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.content-right .close {
+    width: 90%;
+    float: right;
+}
+
+.content-right .close .book-name {
+    color: #9e9e9e;
+    display: block;
+    width: 70%;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.content-right .close .book-view-count {
+    float: right;
+}
+
+.content-right .show {
+    display: none;
+    width: 90%;
+    float: right;
+    padding: 0.25rem 0;
+
+}
+
+.content-right .active .show {
+    display: block;
+}
+
+.content-right .active .close {
+    display: none;
+}
+
+.content-right .show .book-img {
+    float: left;
+    width: 4rem;
+    padding-right: 1rem;
+}
+
+.content-right .show .book-img:hover {
+    cursor: pointer;
+}
+
+.content-right .show .book-img img {
+    width: 100%;
+}
+
+.content-right .book-name {
+    color: #f26552;
+}
+
+.content-right .book-view-count {
+    color: #9e9e9e;
+}
+
+/* content-right end */
+/* 1F end*/
+
+/* 热门类型 start*/
+.pop-content {
+    height: 30rem;
+}
+
+.pop-top > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop-top > ul > li {
+    width: 18.7rem;
+    height: 20rem;
+    background-color: #fff;
+}
+
+.pop-top > ul > li + li {
+    border-left: 0.1rem solid #f0f0f0;
+}
+
+.pop-top .pop-image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 3.5rem auto 2rem;
+}
+
+.pop-top .pop-image:hover {
+    cursor: pointer;
+}
+
+.pop-top .pop-image img {
+    width: 100%;
+}
+
+.pop-top .pop-image ~ p, .pop-content span {
+    text-align: center;
+    color: #9e9e9e;
+    font-size: 0.8rem;
+}
+
+.pop-top .pop-image ~ p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 50%;
+    display: block;
+    margin: 1.25rem auto;
+}
+
+.pop-top .pop-image + p:hover {
+    cursor: pointer;
+}
+
+.pop-top .pop-bookName {
+    color: #212121 !important;
+    font-size: 1rem !important;
+}
+
+.pop-top .pop-bookName:hover {
+    color: #f26552;
+}
+
+.pop-top .pop-like {
+    margin-top: 1rem;
+}
+
+.pop-content .pop-bottom {
+    border-top: 0.1rem solid #f0f0f0;
+}
+
+.pop-bottom ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop-bottom ul > li {
+    width: 11rem;
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem 2rem;
+}
+
+.pop-bottom li + li {
+    border-left: 0.1rem solid #f0f0f0;
+}
+
+.pop-bottom .pop-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 1rem;
+    box-sizing: border-box;
+}
+
+.pop-bottom .pop-image img {
+    width: 100%;
+}
+
+.pop-bottom .pop-image img:hover {
+    cursor: pointer;
+}
+
+.pop-bottom p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pop-bottom .pop-bookName {
+    display: block;
+    text-align: left;
+    margin-top: 0.25rem;
+    color: #212121;
+}
+
+.pop-bottom .pop-bookName:hover {
+    cursor: pointer;
+}
+
+.pop-bottom .pop-like {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #9e9e9e;
+}
+
+/* 热门类型 end*/
+
+

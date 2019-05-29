@@ -1,0 +1,227 @@
+@charset "utf-8";
+$white: #fff;
+$black: #212121;
+$brown: #e3d1bd;
+$gray: #9e9e9e;
+$jacinth: #e43a2e;
+$light-brown: #f8f0e7;
+$light-gray: #f0f0f0;
+$light-jacinth: #f26552;
+body {
+  background-color: $brown;
+  width: 45rem;
+  margin: 4rem auto 0;
+  display: flex;
+  justify-content: center;
+  //内容
+  .content {
+    width: 45rem;
+    background-color: $light-brown;
+    position: relative;
+
+    //头部
+    .header {
+      position: fixed;
+      top: 0;
+      width: 45rem;
+      background-color: $brown;
+
+      p {
+        box-sizing: border-box;
+        margin: auto;
+        background-color: $light-brown;
+        width: 45rem;
+        border-bottom: 0.05rem solid $gray;
+        padding: 2rem 1rem 0.25rem;
+
+        span {
+          display: inline-block;
+          color: $gray;
+          height: 2rem;
+          vertical-align: middle;
+          max-width: 20rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          .book-name {
+            color: $light-jacinth;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        .play {
+          font-size: 1.5rem;
+          color: $black;
+
+          &:hover {
+            color: $jacinth;
+            cursor: pointer;
+          }
+
+          &.active {
+            color: $jacinth;
+          }
+        }
+
+        .buy {
+          vertical-align: middle;
+          padding: 0.5rem;
+          border-radius: 0.25rem;
+          color: $white;
+          float: right;
+          background-color: $light-jacinth;
+          font-size: 0.8rem;
+
+          &:hover {
+            background-color: $jacinth;
+          }
+        }
+      }
+    }
+
+    .article {
+      padding: 3rem;
+
+      .book-title {
+        display: block;
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        padding-bottom: 1rem;
+        text-indent: 2rem;
+        line-height: 2rem;
+        letter-spacing: 0.2rem;
+        &.active {
+          color: $jacinth;
+        }
+      }
+    }
+
+    //侧边栏
+    .left {
+      width: 15rem;
+      padding-right: 0.25rem;
+      box-sizing: border-box;
+      position: absolute;
+      left: -15rem;
+
+      .catalogue {
+        position: fixed;
+        color: #212121;
+        padding: 0.5rem 0.75rem;
+
+        .title {
+          padding: 0.5rem;
+          background-color: $light-brown;
+          text-align: right;
+
+          &::before {
+            float: left;
+            content: "目录";
+            color: $gray;
+          }
+
+          span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $jacinth;
+            vertical-align: middle;
+          }
+        }
+
+        .catalogue-content {
+          background-color: $white;
+          height: 26.5rem;
+          overflow-y: auto;
+          transition: height 2s;
+          scrollbar-base-color: #e43a2e;
+          scrollbar-arrow-color: #e43a2e;
+          scrollbar-darkshadow-color: #e43a2e;
+          width: 14rem;
+
+          li {
+            a {
+              display: block;
+              text-align: left;
+              padding: 0.5rem 1rem;
+              border-bottom: 0.1rem dotted $light-gray;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              color: $gray;
+
+              &.active {
+                color: $jacinth;
+                background-color: $light-brown;
+              }
+
+              &:hover {
+                cursor: pointer;
+                color: $jacinth;
+                background-color: $light-brown;
+              }
+            }
+          }
+
+          .load-more {
+            text-align: center;
+            padding: 0.5rem 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: $gray;
+            background-color: $light-gray;
+
+            &:hover {
+              color: $jacinth;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 15rem;
+      box-sizing: border-box;
+      position: absolute;
+      right: -15rem;
+      padding-left: 0.25rem;
+
+      .nav-btn {
+        position: fixed;
+        color: #212121;
+        bottom: 2.5rem;
+
+        .iconfont {
+          text-align: center;
+          color: $brown;
+          width: 2.5rem;
+          height: 2.5rem;
+          line-height: 2.5rem;
+          border-radius: 50%;
+          font-size: 2rem;
+          background-color: $light-brown;
+          display: block;
+          margin: 1rem 0.25rem;
+          opacity: 0.8;
+
+          &:hover {
+            box-shadow: $gray 0 0 20px 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+  }
+
+}

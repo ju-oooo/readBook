@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="../../css/book/book-public.css">
+    <link rel="stylesheet" href="../../css/user/user-login.css">
+    <script defer src="../../js/user/login.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/book/include.js"></script>
+</head>
+<body>
+<header></header>
+<section>
+    <!-- 登录框-->
+    <div class="login">
+        <p>
+            <span class="title">登录</span>
+            <a href="./register.html" class="to-register">去注册&nbsp;&gt;&nbsp;&gt;</a></p>
+        <!--登录时进行简单验证-->
+        <div>
+            <!--可以使用手机号，邮箱，账号-->
+            <input type="text" id="username" placeholder="账号/手机号/邮箱/身份证号">
+            <span id="umsg"></span>
+        </div>
+        <div>
+
+            <input type="password" id="password" placeholder="请输入密码">
+            <span id="pmsg"></span>
+        </div>
+        <div class="auto">
+            <input type="checkbox" id="auto">
+            <label for="auto" onselectstart="return false">自动登录</label>
+            <a href="#" class="forget">忘记密码</a>
+        </div>
+        <div>
+            <button id="login" class="elect">登&nbsp;录</button>
+        </div>
+    </div>
+</section>
+
+<footer></footer>
+</body>
+</html>
